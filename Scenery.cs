@@ -22,7 +22,7 @@ namespace D8_porting_WPF
     }
     public class Scenery
     {
-        static List<Scene> scenes = new List<Scene>() {
+        static public List<Scene> scenes = new List<Scene>() {
             new Scene("Start",
                 "Starta spelet genom att skriva 'n'\n" +
                 "Kommandon (i spelet):\n" +

@@ -25,6 +25,7 @@ namespace D8_porting_WPF
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
         }
+        private int current = 0;
         private void ApplicationKeyPress(object sender, KeyEventArgs e)
         {
             string output = "Key pressed: ";
@@ -34,20 +35,17 @@ namespace D8_porting_WPF
             {
                 System.Windows.Application.Current.Shutdown();
             }
-            else if(e.Key == Key.A)
+            else if(e.Key == Key.N)
             {
-                Title.Text = "AAAAAAAAAH!";
-                Text.Text = "Namen aaaaah!\nÅååååh!\nÄäääää!";
+                Title.Text = Scenery.scenes[current].Title;
+                Text.Text = Scenery.scenes[current].Text;
+                current = Scenery.scenes[current].Next;
             }
-            else if (e.Key == Key.I)
+            else if (e.Key == Key.P)
             {
-                Title.Text = "IIIIIIIIIH!";
-                Text.Text = "Jasäjabah iiiiiiiih!";
-            }
-            else if(e.Key == Key.O)
-            {
-                Title.Text = "OOOOOOH!";
-                Text.Text = "Åååh,\nOooh\nUuuuuuuh!\nYyyyyyyl!";
+                Title.Text = Scenery.scenes[current].Title;
+                Text.Text = Scenery.scenes[current].Text;
+                current = Scenery.scenes[current].Previous;
             }
         }
     }
